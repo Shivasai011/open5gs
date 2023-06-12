@@ -1,15 +1,15 @@
 # IMSI number of the UE. IMSI = [MCC|MNC|MSISDN] (In total 15 or 16 digits)
 
-supi: 'imsi-{{ .Values.mcc }}{{ .Values.mnc }}{{ .Values.initialMSISDN }}'
-mcc: '{{ .Values.mcc }}'
-mnc: '{{ .Values.mnc }}'
+supi: 'imsi-208930000000003'
+mcc: '208'
+mnc: '93'
 
 # Permanent subscription key
-key: '{{ .Values.key }}'
+key: '8baf473f2f8fd09487cccbd7097c6862'
 # Operator code (OP or OPC) of the UE
-op: '{{ .Values.op }}'
+op: '8e27b6af0e692e750f32667a3b14605d'
 # This value specifies the OP type and it can be either 'OP' or 'OPC'
-opType: '{{ .Values.opType }}'
+opType: 'OP'
 # Authentication Management Field (AMF) value
 amf: '8000'
 # IMEI number of the device. It is used if no SUPI is provided
@@ -37,19 +37,21 @@ uacAcc:
   
 # Initial PDU sessions to be established
 sessions:
-  {{- range .Values.apnList }}
-  - {{- toYaml . | nindent 4 }}
-  {{- end }}
+  - type: "IPv4"
+        apn: "internet"
+        slice:
+          sst: 0x01
+          sd: 0x010203
 
 # Configured NSSAI for this UE by HPLMN
 configured-nssai:
-  - sst: {{ .Values.sst }}
-    sd: {{ .Values.sd }}
+  - sst: 0x01
+    sd: 0x010203
 
 # Default Configured NSSAI for this UE
 default-nssai:
-  - sst: {{ .Values.sst }}
-    sd: {{ .Values.sd }}
+  - sst: 1
+    sd: 1
 
 # Supported encryption algorithms by this UE
 integrity:
