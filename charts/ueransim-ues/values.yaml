@@ -65,21 +65,21 @@ name: ueransim-ues
 
 count: 1
 initialMSISDN: '0000000001'
-mcc: '999'
-mnc: '70'
-key: 465B5CE8B199B49FAA5F0A2EE238A6BC
-op: E8ED289DEBA952E4283B54E88E6183CA
-opType: OPC
+mcc: '208'
+mnc: '93'
+key: 8baf473f2f8fd09487cccbd7097c6862
+op: 8e27b6af0e692e750f32667a3b14605d
+opType: OP
 gnb:
   hostname: ueransim-gnb
-sst: 1
-sd: "0x111111"
+sst: 0x01
+sd: "0x010203"
 apnList:
   - type: 'IPv4'
     apn: 'internet'
     slice:
-      sst: 1
-      sd: "0x111111"
+      sst: 0x01
+      sd: "0x010203"
     emergency: false
 
 ## @param command Override default container command (useful when using custom images)
