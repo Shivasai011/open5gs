@@ -73,11 +73,11 @@ interfaces:
     dev: eth0
   radio:
     dev: eth0
-mcc: '999'
-mnc: '70'
-sst: 1
-sd: "0x111111"
-tac: '0001'
+mcc: '208'
+mnc: '93'
+sst: 0x01
+sd: "0x010203"
+tac: '1'
 
 resources:
   limits: {}
@@ -103,8 +103,8 @@ ues:
     - type: 'IPv4'
       apn: 'internet'
       slice:
-        sst: 1
-        sd: "0x111111"
+        sst: 0x01
+        sd: "0x010203"
       emergency: false
   resources:
     limits: {}
